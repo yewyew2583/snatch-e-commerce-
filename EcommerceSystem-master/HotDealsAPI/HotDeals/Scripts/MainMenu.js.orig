@@ -1,0 +1,87 @@
+﻿$(document).ready(function () {
+    jom.ajax({
+        url: jom.apiUrl + "product/get-product",
+        success: function (result) {
+            var product_detail = result.data;
+
+            console.log(product_detail);
+
+<<<<<<< HEAD
+            /*Display date*/
+            var start_date = new Date(product_detail[0].starting_date);
+            var start_date_full = start_date.getDate() + '/' + Number(start_date.getMonth() + 1) + '/' + start_date.getFullYear();
+            var end_date = new Date(product_detail[0].expiring_date);
+            var end_date_full = end_date.getDate() + '/' + Number(end_date.getMonth() + 1) + '/' + end_date.getFullYear();
+            var date_display = document.getElementById('date_display');
+            date_display.innerHTML = start_date_full + ' - ' + end_date_full;
+
+            /*Display Item Counter*/
+            var item_counter = product_detail[0].stock_quantity;
+            var item_count = document.getElementsByClassName('item-count');
+            item_count[0].innerHTML = item_counter + ' items left!';
+            
+            /*Display Image Tab*/
+            for (var i = 0; i < product_detail.length; i++) {
+                var div = document.createElement('div');
+                var img = document.createElement('img');
+                var selection_li = document.createElement('li');
+                var selection_a = document.createElement('a');
+                var selection_img = document.createElement('img');
+                
+                if (i == 0) {
+                    div.className = 'tabs-panel is-active';
+                    div.id = 'image' + i;
+                    img.className = 'thumbnail';
+                    img.src = 'img/product/' + product_detail[i].image_url;
+
+                    selection_li.className = 'tabs-title is-active';
+                    selection_a.href = '#image' + i;
+                    selection_img.src = 'img/product/' + product_detail[i].image_url;
+                    
+                }
+                else {
+                    div.className = 'tabs-panel';
+                    div.id = 'image' + i;
+                    img.className = 'thumbnail';
+                    img.src = 'img/product/' + product_detail[i].image_url;
+
+                    selection_li.className = 'tabs-title';
+                    selection_a.href = '#image' + i;
+                    selection_img.src = 'img/product/' + product_detail[i].image_url;
+                    
+                }
+                div.appendChild(img);
+                selection_a.appendChild(selection_img);
+                selection_li.appendChild(selection_a);
+                $('.image_tab').append(div);
+                $('.image_tab_selection').append(selection_li);
+            }
+            var product_detail_image_tab = new Foundation.Tabs($('.product-detail-image-tab'));
+
+            /*Display Product Name*/
+            var product_name = product_detail[0].product_name;
+            var product_name_h2 = document.getElementById('product_name');
+            product_name_h2.innerHTML = product_name;
+
+            /*Display Product Price*/
+            var product_price = product_detail[0].price;
+            var product_price_h6 = document.getElementById('price');
+            product_price_h6.innerHTML = 'RM' + product_price;
+            var product_discount_price = product_detail[0].discount_price;
+            var product_discount_price_h4 = document.getElementById('discount_price');
+            product_discount_price_h4.innerHTML = 'RM' + product_discount_price;
+
+            /*Display Product Name*/
+            var product_detail = product_detail[0].product_detail;
+            var product_detail_p = document.getElementById('product_detail');
+            product_detail_p.innerHTML = product_detail;
+            
+=======
+            //var category_drilldown = new Foundation.Drilldown($('#category-drilldown'));
+>>>>>>> 0009553d6efdbb7b6a51bdc7637e3501b9ad89e0
+        },
+        fail: function (result) {
+            console.log("Category retrieve failed!");
+        }
+    });
+});

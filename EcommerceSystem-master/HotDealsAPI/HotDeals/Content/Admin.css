@@ -1,0 +1,8 @@
+﻿.login-section {
+    margin-top: 5%;
+    text-align: center;
+}
+
+.username-box, .password-box{
+    width: 300px;
+}

@@ -1,0 +1,138 @@
+/* Body Content */
+.body-content{
+    margin-left:15%;
+    margin-right:15%;
+}
+
+/* Header */
+.desktop-header {
+    text-align:center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.desktop-header img{
+    max-width:300px;
+}
+
+#about_us {
+    padding: 30px 30px 30px 30px;
+}
+
+/* Navbar */
+.navbar_logo_ul{
+    list-style-type:none;
+}
+
+.navbar-logo {
+    min-width: 100%;
+}
+
+.navbar-link {
+    display: block;
+    float: left;
+}
+
+.desktop-navbar {
+    overflow: hidden;
+    background-color: rgb(34,34,34);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left:15%;
+    padding-right:15%; 
+}
+
+.desktop-navbar a{
+    color:rgb(255,255,255);
+    text-decoration:none;
+    padding-left:0;
+    font-size: 16px;
+}
+
+.desktop-navbar span{
+    color:rgb(255,255,255);
+    padding-right:15px;
+}
+
+.desktop-navbar a:hover{
+    color:rgb(26, 255, 26);
+}
+
+.desktop-navbar .desktop-navbar-right{  
+    clear:both;
+    float:right;
+}
+
+.desktop-navbar .desktop-navbar-right li{  
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+/* Footer */
+footer{
+    padding-top:25px;
+    padding-left:15%;
+    padding-right:15%; 
+    padding-bottom:15px;
+    background-color: rgb(34,34,34);
+    margin-top:100px;
+}
+
+footer .footer-small-title{
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+footer ul{
+    list-style-type:none;
+    color:rgb(255,255,255);
+}
+
+footer .footer-social-icon h5{
+    margin-top: 3%;
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(255,255,255);
+}
+
+footer .footer-social-icon li{
+    display:inline;
+    font-size:40px;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+footer li a{
+    text-decoration:none;
+    color:rgb(255,255,255);
+}
+
+footer li a:focus{
+    text-decoration:none;
+    color:rgb(255,255,255);
+}
+
+footer li a:hover{
+    text-decoration:none;
+    color:rgb(26, 255, 26);
+}
+
+footer img{
+    padding-top:25px;
+}
+
+.footer-line{
+    margin-top:2%;
+}
+
+/* Media Query */
+@media (max-width:480px) {
+    .body-content {
+        margin-left:6%;
+        margin-right:6%;
+    }
+    .desktop-navbar{
+        padding-left:2%;
+        padding-right:2%;
+    }
+}

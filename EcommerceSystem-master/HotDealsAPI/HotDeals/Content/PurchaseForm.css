@@ -1,0 +1,51 @@
+﻿.big-section{
+    margin-top:10%;
+}
+
+.select-quantity-section {
+    border-right:1px solid rgb(0,0,0);
+}
+
+.select-quantity-section .thumbnail{
+    max-width:400px;
+}
+
+.select-quantity-section img{
+    width:100%;
+}
+
+section .select-quantity-section, section .purchase-form-section {
+    color: rgb(72, 72, 72);
+}
+
+.select-quantity-section h3, .purchase-form-section h3 {
+    color: rgb(34,34,34);
+    font-size:1.75em;
+    margin-top:10px;
+}
+
+.select-quantity-section h4{
+    font-size:1.5em;
+}
+
+.select-quantity-section .h4-total-payment {
+    font-size: 2.0em;
+    color: rgb(0,0,0);
+}
+
+.select-quantity-section #original_price {
+    color:rgb(255,0,0);
+    text-decoration:line-through;
+}
+
+.info-text-label{
+    font-weight:700;
+}
+
+/* Media Query */
+@media (max-width:639px) {
+    .select-quantity-section{
+        border-right:none;
+        border-bottom:1px solid rgb(0,0,0);
+    }
+}

@@ -1,0 +1,152 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="HotDeals.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - My ASP.NET Application</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" href="Content/font-awesome.min.css">
+    <link rel="stylesheet" href="Content/icons/foundation-icons.css">
+    <link rel="stylesheet" href="Content/foundation.min.css">
+    <link rel="stylesheet" href="Content/app.css">
+    <link rel="stylesheet" href="Content/SignUp.css">
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+        <script src="Scripts/jom.js"></script>
+        <script src="Scripts/vendor/what-input.js"></script>
+        <script src="Scripts/vendor/foundation.js"></script>
+        <script src="Scripts/app.js"></script>
+
+        <script type="text/javascript">
+        jom.apiUrl = "<%= HotDeals.Config.Url_RemoteApi  %>";
+        jom.isDebug = <%= HotDeals.Config.IsDebug.ToString().ToLower() %>;
+        </script>
+
+<<<<<<< HEAD
+        <!-- Header For Desktop -->
+        <section class="desktop-header">
+            <div>
+                <a href="MainMenu.aspx"><img src="img/office-cart-logo-grey.png" /></a>
+            </div>
+        </section>
+
+        <!-- Navbar For Desktop -->
+        <section class="desktop-navbar row">
+            <div class="column small-6 medium-7">
+                <ul class="menu left">
+                    <li><a href="#footer">Customer Service</a></li>
+                    <li><a href="#">About Us</a></li>
+                </ul>
+            </div>
+            <div class="column small-6 medium-5">
+                <ul class="menu desktop-navbar-right">
+                    <li><span class="desktop-navbar-signUp-signIn"><a href="SignIn.aspx">Sign in</a> | <a href="SignUp.aspx">Sign up</a></span></li>
+                </ul>
+            </div>
+        </section> 
+
+        <section class="body-content">
+
+            <!-- Body Content -->
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+
+            <!-- Footer -->
+            <footer class="row medium-up-3 large-up-3" id="footer">
+                <hr class="footer-line"/>
+                <div class="column">
+                    <ul>
+                        <li class="footer-small-title"><strong>Payment Method</strong></li>
+                        <li><a href="#">Bank In</a></li>
+                        <li><a href="#">Cash On Delivery</a></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <ul>
+                        <li class="footer-small-title"><strong>Contact us</strong></li>
+                        <li>Phone: 03-90114622</li>
+                        <li>Email: techies@gmail.com</li>
+                        <li>Address: E3-4, Mutiara Damansara.</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <img src="img/office-cart-logo-grey.png"/>
+                </div>
+            </footer>
+        </section>
+=======
+
+
+        <!--content-->
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+        <!--content ends-->
+
+        <!--footer-->
+        <footer class="row small-up-12 medium-up-6 large-up-4">
+            <hr class="footer-line"/>
+            <section class="payment-method-section column">
+                <p>Payment Method</p>
+                <h6>detailsssssssssssssssssssssssssss</h6>
+            </section>
+
+            <section class="logo-section column">
+                <!--logo -->
+                xxxxx logo xxxxx
+            </section>
+
+            <section class="contact-us-section column">
+                <!--contact us-->
+                <p>Contact Us</p>
+                <h6>013-71888856</h6>
+                <h6>Name: Tee OO</h6>
+            </section>
+        </footer>
+        <!--footer ends-->
+>>>>>>> af7e40aef10ba05a86eff9113cabb8de75526488
+    </form>
+</body>
+<!--<script>
+$(document).ready(function () {
+    /*jom.ajax({
+        url:jom.apiUrl + "testAPI/testAPI",
+        success:function(){
+            console.log("Success");
+        },
+        fail:function(){
+            console.log("fail");
+        }
+    });*/
+});
+</script>-->
+</html>

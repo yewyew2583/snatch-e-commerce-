@@ -1,0 +1,27 @@
+﻿.paymentGuideContainer {
+    display: block;
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+.paymentGuideContainer h3,
+.paymentGuideContainer h4,
+.paymentGuideContainer h6 {
+    font-weight: bold;
+}
+
+.paymentGuideContainer h6 {
+    color: rgb(66, 134, 244);
+}
+
+.paymentGuideContainer .cut {
+    width: 100%;
+    border-bottom: 1px solid rgb(122,122,122);
+}
+
+.paymentGuideContainer .bank-acc-info {
+    font-weight: bold;
+    color: rgb(22, 32, 221);
+}

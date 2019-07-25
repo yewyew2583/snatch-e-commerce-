@@ -1,0 +1,177 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="HotDeals.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - My ASP.NET Application</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" href="Content/font-awesome.min.css">
+    <link rel="stylesheet" href="Content/icons/foundation-icons.css">
+    <link rel="stylesheet" href="Content/foundation.min.css">
+    <link rel="stylesheet" href="Content/app.css">
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+        <script src="Scripts/jom.js"></script>
+
+        <script type="text/javascript">
+        jom.apiUrl = "<%= HotDeals.Config.Url_RemoteApi  %>";
+        jom.isDebug = <%= HotDeals.Config.IsDebug.ToString().ToLower() %>;
+        </script>
+
+        <!-- Header For Desktop -->
+        <section class="desktop-header">
+            <div>
+                <a href="MainMenu.aspx"><img src="img/snatch.jpg" /></a>
+            </div>
+        </section>
+
+        <!-- Pop up detail for About US -->
+        <div class="reveal" id="about_us" data-reveal>
+            <h1>About Us</h1>
+            <p class="lead">Snatch! The unique marketplace for all your everyday needs! At a price you can never resist!</p>
+            <p>Snatch is a convenient and secure online shopping platform. Experience a unique platform where you can discover new brands, new products, and enjoy exclusive deals from Friday to Sunday.</p>
+            <p>We place great pride in ensuring our customers an absolutely safe and secure shopping experience on Snatch, so that you can buy the products you want worry-free! As of today, our customers throughout the entire Klang Valley will be able to easily, quickly, and effectively receive their parcels in the next 24 working hours.</p>
+            <p>We strive towards excellence in our service and keep our prime focus on local demands. We acquire and transport items to everyone that we serve to continually build towards a better, simpler and more convenient marketplace platform.</p>
+            <button class="close-button" data-close aria-label="Close modal" type="button">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+
+        <!-- Navbar For Desktop -->
+        <section id="navbar-no-login" class="desktop-navbar row">
+            <div class="column small-6 medium-7">
+                <ul class="menu left">
+                    <li><a href="#footer" onclick="on()">Customer Service</a></li>
+                    <li><a href="#" data-open="about_us">About Us</a></li>
+                </ul>
+            </div>
+            <div class="column small-6 medium-5">
+                <ul class="menu desktop-navbar-right">
+                    <li>
+                            <div class="desktop-navbar-signUp-signIn desktop-navbar-user-account">
+                                <b><a href="#" id="dropdown_option" data-toggle="user_account_dropdown"></a></b>
+                            </div>
+                                <!--<a href="SignIn.aspx">Sign in</a> | <a href="SignUp.aspx">Sign up</a>-->
+                                <!--<a href="#">Wong Tuck Yew's Account</a>
+                                <span class="dropdown-content">
+                                    <!--<a href="#"><span class="glyphicon glyphicon-list"></span>My Orders</a>
+                                    <a href="#"><span class="glyphicon glyphicon-log-out"></span>Logout</a>
+                                 </span>-->
+                        <div class="dropdown-pane bottom float-right" id="user_account_dropdown" data-dropdown data-hover="true" data-hover-pane="true" style="background-color:#333333;">
+                            <a class="glyphicon glyphicon-list" href="CustomerOrder.aspx"> My Order</a><br/><br />
+                            <a class="glyphicon glyphicon-lock" href="ChangePassword.aspx"> Change Password</a><br /><br />
+                            <a class="glyphicon glyphicon-log-out" onclick="logout()"> Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Navbar For Desktop (after login) -->
+        <!--<section id="navbar-login" class="desktop-navbar row">
+            <div class="column small-6 medium-3">
+                <ul class="menu left">
+                    <li><a href="MainMenu.aspx"><img src="img/snatch.jpg" class="navbar-logo" /></a></li>
+                </ul>
+            </div>
+            <div class="column small-6 medium-9">
+                <ul class="menu desktop-navbar-right">
+                    <li><a href="#footer" class="navbar-link">Customer Service</a></li>
+                    <li><a href="#" class="navbar-link">About Us</a></li>
+                    <li>
+                        <div class="desktop-navbar-signUp-signIn desktop-navbar-user-account">
+                            <!--<a href="SignIn.aspx">Sign in</a> | <a href="SignUp.aspx">Sign up</a>-->
+                            <!--<a href="#">Wong Tuck Yew's Account</a>
+                            <div class="dropdown-content">
+                                <a href="#"><span class="glyphicon glyphicon-list"></span>My Orders</a>
+                                <a href="#"><span class="glyphicon glyphicon-log-out"></span>Logout</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>-->
+
+        <section class="body-content">
+
+            <!-- Body Content -->
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+
+        </section>
+        <!-- Footer -->
+            <footer class="row medium-up-3 large-up-3" id="footer">
+                <%--<hr class="footer-line"/>--%>
+                <div class="column">
+                    <ul>
+                        <li class="footer-small-title"><strong>Payment Method</strong></li>
+                        <li><a href="PaymentGuide.aspx">Bank In</a></li>
+                        <li><a href="PaymentGuide.aspx">Cash On Delivery</a></li>
+                        <li><a href="TermsAndConditions.aspx">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <ul>
+                        <li class="footer-small-title"><strong>Contact us</strong></li>
+                        <li>Phone: 03-90114622</li>
+                        <li>Email: techies@gmail.com</li>
+                        <li>Address: E3-4, Mutiara Damansara.</li>
+                    </ul>
+                </div>
+                <div class="column footer-social-icon">
+                    <h5>Or follow us on social media!</h5>
+                    <ul>
+                        <li><a href="#"><i class="fi-social-facebook"></i></a></li>
+                        <li style="display:inline-block"><a href="#"><i class="fi-social-twitter"></i></a></li>
+                        <li><a href="#"><i class="fi-social-google-plus"></i></a></li>
+                    </ul>
+                </div>
+            </footer>
+    </form>
+</body>
+<script src="Scripts/vendor/what-input.js"></script>
+<script src="Scripts/vendor/foundation.js"></script>
+<script src="Scripts/app.js"></script>
+<script>
+$(document).ready(function () {
+    /*jom.ajax({
+        url:jom.apiUrl + "testAPI/testAPI",
+        success:function(){
+            console.log("Success");
+        },
+        fail:function(){
+            console.log("fail");
+        }
+    });*/
+});
+</script>
+</html>

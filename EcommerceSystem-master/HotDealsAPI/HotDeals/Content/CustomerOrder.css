@@ -1,0 +1,77 @@
+﻿#customer_order_title{
+    margin-left:15px;
+    margin-top:15px;
+}
+
+.media-object{
+    border:1px solid rgb(34,34,34);
+    padding:30px 30px;
+    margin-bottom:25px;
+}
+
+.media-object .info_section{
+    text-align: justify;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.media-object .column{
+    text-align:center;
+}
+
+.media-object .thumbnail{
+    max-width:300px;
+}
+
+.media-object .thumbnail img{
+    max-width:100%;
+}
+
+.order_page_button{
+    width:200px;
+    height:50px;
+    border:0.5px solid rgb(0,0,0);
+}
+/*No customer Order*/
+.no_customer_order{
+    display:none;
+    text-align:center;
+    vertical-align:middle;
+    margin-top:300px;
+    margin-bottom:300px;
+}
+
+/*Loader*/
+.loader{
+    border: 5px solid #f3f3f3;
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+    border-top: 5px solid #555;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin:300px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/*Confirmation Popup*/
+.confirmation_popup .confirmation_popup{
+    text-align:center;
+}
+
+/*Status Icon*/
+.status_icon{
+    font-size:10em;
+}
+
+#approved_icon{
+    color:rgb(77, 255, 77);
+}
+
+#rejected_icon{
+    color:rgb(255, 51, 51);
+}

@@ -1,0 +1,58 @@
+﻿body{
+    background-image: url("../img/helloKitty.png");
+    background-attachment:fixed
+}
+.sign-up-form-section h4 {
+    padding: 30px 0px 10px 0px;
+    text-align: center;
+}
+
+.sign-up-form-section .sign-up-form {
+    padding: 20px 10px 30px 10px;
+    font-size: 14px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 350px;
+    border: 3px solid deeppink;
+    background-color: lightpink
+}
+
+.sign-up-form .details {
+    padding: 10px 0px 0px 25px;
+}
+
+.sign-up-form input{
+    height: 32px;
+    width: 275px;
+    padding-left: 8px;
+}
+
+.sign-up-form p {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 10px;
+}
+
+.sign-up-form .continue-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 32px;
+    width: 275px;
+    text-align: center;
+    color: purple;
+    border: 2px solid rebeccapurple;
+    background-color: plum;
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+
+.sign-up-form .continue-button:hover {
+    border: 2px solid rebeccapurple;
+    background-color: mediumorchid;
+}
